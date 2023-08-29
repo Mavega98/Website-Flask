@@ -14,14 +14,14 @@ def index():
     return render_template("index.html")
 
 # Define a route for running a function and displaying its result
-@app.route('/run_function')
-def run_function():
+@app.route('/submit_invoice')
+def submit_invoice():
     """
-    This function handles the request to run a specific function ('print_invoice')
+    This function handles the request to run a specific function ('submit_invoice')
     and displays the result on the 'invoice_data.html' template.
     """
     try:
-        result = invoice_table_data.invoice_start_message()  # Run the 'print_invoice' function
+        result = invoice_table_data.create_list()  # Run the 'print_invoice' function
     except Exception as e:
         result = str(e)  # If an exception occurs, capture the error message
 
